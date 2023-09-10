@@ -1,0 +1,148 @@
+<! DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Final Project</title>
+		<link href="" rel="stylesheet" type="text/css">
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			body{
+				font-family: Serif, monospace;
+				font-size: 20px;
+				color: black;
+				font-style: bold;
+				margin: 50px;
+				/*padding: 10px;*/
+				max-width: 100%;
+				/*background-image: url("brain.png");*/
+			}
+			#note{
+				font-size: 15px;
+				/*background-color: #cc0000;*/
+				color: red;
+				width: 10%;
+				padding: 5px;
+				border-radius: 20px;
+				text-align: center;
+			}
+			img{
+				float: right;
+				height: 500px;
+				width: 60%;
+			}
+			input{
+				background-color: #FAF9F6;
+				border-radius: 5px;
+			}
+			input[type=submit] {
+				width: 10em;  
+				height: 2em;
+				background-color: #5adbb5;
+				border: none;
+				border-radius: 10px;
+				box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.2);
+				cursor: pointer;
+			}
+			input[type=reset] {
+				width: 10em;  
+				height: 2em;
+				background-color: #5adbb5;
+				border: none;
+				border-radius: 10px;
+				box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.2);
+				cursor: pointer;
+			}
+			input[type=submit]:hover {
+				background-color: #51c5a2
+			}
+			input[type=reset]:hover {background-color: #51c5a2}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Are You at Risk of Getting a <strong>Stroke</strong>?</h1>
+		<p id="note">(For adult only)</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<form action="./execute" method="post">
+			<label>Gender</label>
+			<select id="gender" name="gen">
+				<option>Female</option>
+				<option>Male</option>
+			</select>
+			<br>
+			<br>
+			<img src ="{{ url_for('static', filename='imgs/brain_small.png') }}" alt="Brain" title="Brain">
+			<div>
+				<label for = "age">Age</label>
+				<input type = "number" name = "age" id = "age" required = "" class = "textbox">
+			</div>
+			<br>
+			<br>
+			<label>Do you have hypertension?</label>
+			<select id="hyper" name="hypertension">
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+			<br>
+			<br>
+			<label>Do you have heart disease?</label>
+			<select id="heart" name="heart_disease">
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+			<br>
+			<br>
+			<label>Are you married?</label>
+			<select id="married" name="ever_married">
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+			<br>
+			<br>
+			<label>What do you do for living?</label>
+			<select id="work" name="work_type">
+				<option>Private</option>
+				<option>Self-employeed</option>
+				<option>Govt_Job</option>
+			</select>
+			<br>
+			<br>
+			<label>Where do your home located?</label>
+			<select id="home" name="Residence_type">
+				<option>Urban</option>
+				<option>Rural</option>
+			</select>
+			<br>
+			<br>
+			<label for = "glucose">Whayt is your glucose level?</label>
+			<input type = "number" name = "glucose" id = "glucose" required = "" class = "textbox">
+			<br>
+			<br>
+			<label for = "bmi">What is your BMI?</label>
+			<input type = "float" name = "bmi" id = "bmi" required = "" class = "textbox">
+			<br>
+			<br>
+			
+			<label>Are you a smoker?</label>
+			<select id="smoke" name="smoke">
+				<option>formerly smoked</option>
+				<option>never smoked</option>
+				<option>smokes</option>
+				<option>Unknown</option>
+			</select>
+			<br>
+			<br>
+			<input type = "submit" value = "Submit">
+			<input type = "reset" value = "Reset">
+			
+		</form>
+		<br>
+		<br>
+	</body>
